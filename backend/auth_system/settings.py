@@ -82,7 +82,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "auth_system",
         "USER": "osama",
-        "PASSWORD": "osama12345.",
+        "PASSWORD": "postgres123",
         "HOST": "localhost"
     }
 }
@@ -92,6 +92,9 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "js03212497@gmail.com"
 EMAIL_USE_TLS = True
+
+# second id
+# js032124978 : ekeproepusgqbxcd
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -155,7 +158,12 @@ DJOSER = {
     "USERNAME_RESET_CONFIRM_URL": "email/reset/confirm/{uid}/{token}",
     "ACTIVATION_URL": "activate/{uid}/{token}",
     "SEND_ACTIVATION_EMAIL": True,
-    
+    "SERIALIZERS": {
+        "user_create":"accounts.serializers.UserCreateSerializer",
+        "user_create":"accounts.serializers.UserCreateSerializer",
+        "user_delete":"djoser.serializers.UserDeleteSerializer"
+    }
+
 }
 
 AUTH_USER_MODEL = "accounts.UserAccount"
