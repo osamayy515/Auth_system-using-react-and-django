@@ -91,6 +91,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "js03212497@gmail.com"
+EMAIL_HOST_PASSWORD = "mvnwmdjdtyzuornk"
 EMAIL_USE_TLS = True
 
 # second id
@@ -161,7 +162,7 @@ DJOSER = {
     "SERIALIZERS": {
         "user_create":"accounts.serializers.UserCreateSerializer",
         "user_create":"accounts.serializers.UserCreateSerializer",
-        "user_delete":"djoser.serializers.UserDeleteSerializer"
+        "user_delete":"djoser.serializers.UserDeleteSerializer",
     }
 
 }
