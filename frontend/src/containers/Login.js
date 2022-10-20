@@ -26,7 +26,7 @@ const Login = (props) => {
             <h1>Sign In</h1>
             <p>Sign into your Account</p>
             <form onSubmit={e => onSubmit(e)}>
-                <div className='form-group'>
+                <div className='form-group mb-3'>
                     <input 
                         className='form-control' 
                         type='email' 
@@ -37,7 +37,7 @@ const Login = (props) => {
                         required
                     />
                 </div>
-                <div className='form-group'>
+                <div className='form-group mb-3'>
                     <input 
                         className='form-control' 
                         type='password' 
