@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const Navbar = (props) => (
-    <nav className='navbar navbar-expand-lg bg-light'>
+    <nav className='navbar navbar-expand-lg bg-dark'>
         <div className='container-fluid'>
-            <Link className='navbar-brand' to='/'>Auth System</Link>
+            <Link className='navbar-brand text-white' to='/'>Auth System</Link>
             <button 
                 className='navbar-toggler' 
                 type='button' 
@@ -18,9 +18,9 @@ const Navbar = (props) => (
             </button>
             <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
               <div className='navbar-nav'>
-                <Link className='nav-link active' aria-current='page' to='/'>Home</Link>
-                <Link className='nav-link' to='/login'>Login</Link>
-                <Link className='nav-link' to='/signup'>Sign Up</Link>
+                <Link className='nav-link active text-white' aria-current='page' to='/'>Home</Link>
+                <Link className='nav-link text-white' to='/login'>Login</Link>
+                <Link className='nav-link text-white' to='/signup'>Sign Up</Link>
               </div>
             </div>
         </div>
