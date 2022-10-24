@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState} from 'react'
+import { Link, Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { login } from '../actions/auth';
 
-const Login = ({ login }) => {
+const Login = ({ login, isAuthenticated }) => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -21,7 +21,9 @@ const Login = ({ login }) => {
 
     // Is the user authenticated?
     // Redirect them to the home page
-
+    if (isAuthenticated) {
+        return <Navigate to='/' />
+    }
     return(
         <div className='container mt-5'>
             <h1>Sign In</h1>
@@ -50,7 +52,7 @@ const Login = ({ login }) => {
                         required
                     />
                 </div>
-                <button className='btn btn-primary' type='submit'>Login</button>
+                <button className='btn btn-dark' type='submit'>Login</button>
             </form>
             <p className='mt-3'>
                 Don't have an account? <Link to='/signup'>Sign Up</Link>
@@ -62,8 +64,8 @@ const Login = ({ login }) => {
     );
 };
 
-// const mapStateToProps = state => ({
-    // Is Authenticated?
-// });
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
 
-export default connect(null , { login })(Login);
+export default connect(mapStateToProps , { login })(Login);
